@@ -12,19 +12,19 @@ if a+b>c and a+c>b and c+b>a:
     beta=((b**2-(a**2+c**2))/(-(2*a*c)))
     beta=math.acos(beta)
     beta=math.degrees(beta)
-    print (beta)
+    #print (beta)
 
 
 
     alpha=((a**2-b**2-c**2)/(-(2*b*c)))
     alpha=math.acos(alpha)
     alpha=math.degrees(alpha)
-    print (alpha)
+    #print (alpha)
 
     gamma=((c**2-a**2-b**2)/(-(2*a*b)))
     gamma=math.acos(gamma)
     gamma=math.degrees(gamma)
-    print (gamma)
+    #print (gamma)
 else:
     "Takyto trojuholnik neexistuje"
 
