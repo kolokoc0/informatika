@@ -17,16 +17,22 @@
 #
 # pasc(5)
 
-def colatz(cislo:int):
-    while cislo !=1:
-        if cislo %3 ==0 or cislo%3 !=0 and cislo %2 !=0:
-            cislo *=3
-            cislo +=1
-            print (cislo, end =" ")
-        else:
-            if cislo %2 ==0:
-                cislo /=2
-            print (cislo, end =" ")
+# def colatz(cislo:int):
+#     while cislo !=1:
+#         if cislo %3 ==0 or cislo%3 !=0 and cislo %2 !=0:
+#             cislo *=3
+#             cislo +=1
+#             print (cislo, end =" ")
+#         else:
+#             if cislo %2 ==0:
+#                 cislo /=2
+#             print (cislo, end =" ")
+#
+# colatz (13)
 
-colatz (13)
-
+def pektroj(riadky:int):
+    for i in range(1,riadky+1):
+        for a in range(i):
+            print ("*", end = " ")
+        print (" ")
+pektroj (5)
