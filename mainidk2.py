@@ -30,9 +30,14 @@
 #
 # colatz (13)
 
-def pektroj(riadky:int):
-    for i in range(1,riadky+1):
-        for a in range(i):
-            print ("*", end = " ")
+# def pektroj(riadky:int):
+#     for i in range(1,riadky+1):
+#         for a in range(i):
+#             print ("*", end = " ")
+#         print (" ")
+# pektroj (8)
+def pektroj (riadky):
+    for i in range(riadky):
+        print("*"*(1+i), end =" ")
         print (" ")
 pektroj (5)
