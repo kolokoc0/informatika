@@ -17,22 +17,17 @@ for x in range(a[0],b[0]+1):
     y=int(k*x+q)
     pixels[x,y]=(255,0,0)
     print(x,y)
-
-    #if (y-temp) >1:
-        #for i in range(y-temp):
-            #pixels[x,y-i] = (255,0,0)
     vektor = (b[0]-a[0],b[1]-a[1])
     vektor = (vektor[1],vektor[0]*(-1))
+    if vektor[0]<0 and vektor[1]<0:
+        vektor = (vektor[0]*(-1),vektor[1]*(-1))
     c = float((-1)*(vektor[0]*a[0] + vektor[1]*a[1]))
-    if (y -temp) >1:
-        for i in range(1,y-temp):
+    if (abs(y -temp)) >1:
+        for i in range(1,abs(y-temp)):
+            if y<temp:
+                i = i*(-1)
             new_x = round((vektor[1]*(temp+i)*(-1)+c*(-1))/(vektor[0]))
             print(new_x,temp+i)
             pixels[new_x,temp+i] = (255,0,0) 
-    #while pixels[x-1,y-1] != (255,0,0) and x==y:
-        #pixels[x,y-1] = (255,0,0)
-        #print(x,y)
-        #img.show()
-    #img.show()
     temp = y
 img.show()
