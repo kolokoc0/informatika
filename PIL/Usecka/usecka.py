@@ -7,18 +7,32 @@ a=a.split(',')
 b=b.split(',')
 a=list(map(lambda x: int(x), a))
 b=list(map(lambda x: int(x), b))
+if a[0]>b[0] and a[1] > b[1] or a[0]>b[0] and a[1]<b[1]:
+    a,b = b,a
 
 k=(b[1]-a[1])/(b[0]-a[0])
 q=a[1]-k*a[0]
-
+temp = int(k*a[0]+q)
 for x in range(a[0],b[0]+1):
     y=int(k*x+q)
     pixels[x,y]=(255,0,0)
     print(x,y)
-    while pixels[x-1,y-1] != (255,0,0) and x!=y:
-        pixels[x,y-1] = (255,0,0)
-        y = y-1
-        print(x,y)
+
+    #if (y-temp) >1:
+        #for i in range(y-temp):
+            #pixels[x,y-i] = (255,0,0)
+    vektor = (b[0]-a[0],b[1]-a[1])
+    vektor = (vektor[1],vektor[0]*(-1))
+    c = float((-1)*(vektor[0]*a[0] + vektor[1]*a[1]))
+    if (y -temp) >1:
+        for i in range(1,y-temp):
+            new_x = round((vektor[1]*(temp+i)*(-1)+c*(-1))/(vektor[0]))
+            print(new_x,temp+i)
+            pixels[new_x,temp+i] = (255,0,0) 
+    #while pixels[x-1,y-1] != (255,0,0) and x==y:
+        #pixels[x,y-1] = (255,0,0)
+        #print(x,y)
         #img.show()
     #img.show()
+    temp = y
 img.show()
