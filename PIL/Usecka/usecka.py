@@ -31,11 +31,11 @@ if b[0]-a[0] != 0:
                 print(new_x,temp+i)
                 pixels[new_x,temp+i] = (255,0,0) 
         temp = y
-else:
-    if a[1]>b[1]:
-        a[1],b[1] = b[1],a[1]
-    for y in range(a[1],b[1]+1):
-        pixels[a[0],y] = (255,0,0)
+#else:
+    #if a[1]>b[1]:
+        #a[1],b[1] = b[1],a[1]
+    #for y in range(a[1],b[1]+1):
+        #pixels[a[0],y] = (255,0,0)
 
 img.show()
 
