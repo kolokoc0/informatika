@@ -22,10 +22,6 @@ ct.pack()
 c = tk.Entry(win)
 c.pack()
 
-
-
-
-
 def executor():
     print(a.get(),b.get(),c.get())
     a_koe = float(a.get())
@@ -33,18 +29,26 @@ def executor():
     c_koe = float(c.get())
     diskriminant = (b_koe**2) - (4*a_koe*c_koe)
     if diskriminant <0:
-        print("Nema riesenie v R")
+        nr = "Nema riesenie v R"
+        ries = tk.Label(win, text = nr)
+        ries.pack()
     elif diskriminant==0:
-        print("Koren je: ",str(-1*b_koe/(2*a_koe)))
+        jr = "Koren je: " + str(-1*b_koe/(2*a_koe))
+        ries = tk.Label(win, text = jr)
+        ries.pack()
     else:
-        print("Riesenie x1 je:", ((-1*b_koe+diskriminant**0.5)/(2*a_koe)))
-        print("Riesenie x2 ke:", ((-1*b_koe-diskriminant**0.5)/(2*a_koe)))
+        x1 = ((-1*b_koe+diskriminant**0.5)/(2*a_koe))
+        x2 = ((-1*b_koe-diskriminant**0.5)/(2*a_koe))
+        ries = tk.Label(win, text = ("Riesenie x1: " + str(x1) + "| Riesenie x2: " +str(x2) ))
+        ries.pack()
 
 
 
 
 button = tk.Button(win,text = "Click me !!",command = executor)
 button.pack()
+
+
 
 
 
