@@ -10,7 +10,11 @@ height = 900
 WIDTH = int(WIDTH)
 HEIGHT = int(HEIGHT)
 
+<<<<<<< HEAD
 ws = 15
+=======
+ws = 30
+>>>>>>> 9ddeaa2d35374b5896c743684f9ad9edb9140106
 cell_list = []
 def create2Dmap() ->list:
     map = []
@@ -103,12 +107,31 @@ def drawCells(oldmap, cell_list, ws):
     #novy musim vynulovat
 def calculateGenerations():
     global oldmap,newmap
+<<<<<<< HEAD
     drawCells(oldmap,newmap,ws)
     newmap = rewrite(oldmap,newmap)
     oldmap =newmap.copy()
     canvas.after(100,calculateGenerations)
 calculateGenerations()
 win.mainloop()
+=======
+    drawCells(oldmap,newmap,30)
+    newmap = rewrite(oldmap,newmap)
+    for y in range(HEIGHT):
+        for x in range(WIDTH):
+            oldmap[y][x]=newmap[y][x]
+    newmap = create2Dmap()
+    canvas.after(100,calculateGenerations)
+calculateGenerations()
+win.mainloop()
+
+
+
+
+
+
+
+>>>>>>> 9ddeaa2d35374b5896c743684f9ad9edb9140106
 
 
 
